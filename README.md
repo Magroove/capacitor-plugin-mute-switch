@@ -1,6 +1,6 @@
 # capacitor-plugin-mute-switch
 
-This package is a Capacitor Plugin based on [SoundSwitch](https://github.com/Magroove/capacitor-plugin-mute-switch/blob/main/LICENSE) and it detects if mute switch is enabled or disabled on iOS devices.
+This package is a Capacitor Plugin based on [SoundSwitch](https://github.com/moshegottlieb/SoundSwitch) and it detects if mute switch is enabled or disabled on iOS devices.
 
 Since there is no native iOS API to detect it, the trick is too play a short sound and measure the amount of time it took for the sound to complete playing, this way we can determine if we are in silent mode or not.
 
