@@ -1,10 +1,9 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { MuteSwitchPlugin } from './definitions';
+import type { MuteSwitchPlugin, MuteSwitchResponse } from './definitions';
 
 export class MuteSwitchWeb extends WebPlugin implements MuteSwitchPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  initialize(): Promise<MuteSwitchResponse> {
+    return Promise.resolve({ status: 'error' });
   }
 }

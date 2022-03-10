@@ -1,6 +1,8 @@
 # capacitor-plugin-mute-switch
 
-Detect if silent/mute switch is enabled/disabled on iOS device
+This package is a Capacitor Plugin based on [SoundSwitch](https://github.com/Magroove/capacitor-plugin-mute-switch/blob/main/LICENSE) and it detects if mute switch is enabled or disabled on iOS devices.
+
+Since there is no native iOS API to detect it, the trick is too play a short sound and measure the amount of time it took for the sound to complete playing, this way we can determine if we are in silent mode or not.
 
 ## Install
 
@@ -9,11 +11,35 @@ npm install capacitor-plugin-mute-switch
 npx cap sync
 ```
 
-## API
+## Usage
 
-<docgen-index></docgen-index>
+```typescript
+import { MuteSwitch } from 'capacitor-plugin-mute-switch';
 
-<docgen-api>
-<!-- run docgen to generate docs from the source -->
-<!-- More info: https://github.com/ionic-team/capacitor-docgen -->
-</docgen-api>
+MuteSwitch.isMute().then(response => console.log(response.value))
+
+// Add Listener
+const myPluginEventListener = MuteSwitch.addListener('onChange', response => {
+    console.log('Silente Mode: ', response.isMute);
+});
+
+// Remove
+myPluginEventListener.remove();
+```
+
+## Supported Methods
+
+| Name                  | Android | iOS | Web |
+| :-------------------- | :------ | :-- | :-- |
+| isMute              | ❌     | ✅  | ❌ |
+| addListener              | ❌     | ✅  | ❌ |
+
+
+## License
+
+[MIT](https://github.com/Magroove/capacitor-plugin-mute-switch/blob/main/LICENSE) © [Magroove](https://github.com/Magroove)
+
+----
+
+If you find any bugs or want to contribute to this project, feel free to send us an email:
+[julobato](mailto:julianne@magroove.com) or [fafaschiavo](mailto:fabricio@magroove.com)

@@ -1,7 +1,7 @@
 {
   "name": "capacitor-plugin-mute-switch",
   "version": "0.0.1",
-  "description": "Detect if silent/mute switch is enabled/disabled on iOS device",
+  "description": "Detect if mute switch is enabled or disabled on iOS devices",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -70,9 +70,6 @@
   "capacitor": {
     "ios": {
       "src": "ios"
-    },
-    "android": {
-      "src": "android"
     }
   }
 }

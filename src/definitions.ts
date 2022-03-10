@@ -1,3 +1,7 @@
 export interface MuteSwitchPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  initialize(): Promise<MuteSwitchResponse>;
 }
+
+export type MuteSwitchResponse = { status: MuteSwitchStatus };
+
+export type MuteSwitchStatus = 'success' | 'error';
